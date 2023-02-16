@@ -17,6 +17,7 @@ module Devise
         private
 
         def set_fake_rack_session_for_devise
+          puts "SETTING FAKE RACK SESSION NOW"
           if Rails.configuration.respond_to?(:api_only) && Rails.configuration.api_only
             request.env['rack.session'] ||= FakeRackSession.new
           end
